@@ -1,0 +1,117 @@
+/* Make sure you place the base color of the site in a variable */
+/* the main styles */
+* {
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+html{
+  scroll-behavior: smooth;
+  /* for change scroll bar in firefox*/
+  scrollbar-color: var(--main-color, #07f) #f1f1f1;
+  scrollbar-width: thin;  /*or auto*/
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+::selection {
+  background-color: var(--main-color, #07f);
+  color: var(--dark-color);
+}
+/* for change scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(#fff);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main-color, #07f);
+}
+::-webkit-scrollbar-thumb:hover {
+  border: 1px solid #fff;
+}
+/* framework */
+.max-width {
+  max-width: 1100px;
+  height: 100%;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 1200px) {
+  .max-width {
+    max-width: 1000px;
+  }
+}
+@media (max-width: 1000px) {
+  .max-width {
+    max-width: 850px;
+  }
+}
+@media (max-width: 900px) {
+  .max-width {
+    max-width: 750px;
+  }
+}
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* global values */
+h1 {
+  font-size: 2em;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark-color);
+}
+p { color: #666; }
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.7em;
+  }
+  p { font-size: 14px; }
+}
+@media (max-width: 350px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  p { font-size: 12px; }
+}
+ul, ol { padding: 0; }
+li { list-style: none; }
+a {
+  text-decoration: none;
+  user-select: none;
+}
+nav, footer { user-select: none; }
+form input:not([type="submit"]) {
+  background-color: var(--main-color, #07f);
+  padding: 10px 50px 10px 10px;
+  caret-color: #fff;
+  border: 0;
+}
+[type="submit"] {
+  padding: 10px;
+  cursor: pointer;
+  border: 0;
+}
+form input:not([type="submit"]):focus,
+[type="submit"]:focus {
+  outline: 0;
+}
